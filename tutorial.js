@@ -1,5 +1,6 @@
 var glMat4 = require('gl-mat4')
 var glVec3 = require('gl-vec3')
+var glMat3 = require('gl-mat3')
 
 // First we create a canvas that we'll later render our 3d model onto
 var canvas = document.createElement('canvas')
@@ -234,7 +235,7 @@ renderLoop(function (millisecondsSinceLastRender) {
 
     // Calculate the normal matrix for lighting
     cowboyUniforms.uMVMatrix = mvMatrix
-    cowboyUniforms.uNMatrix = require('gl-mat3/from-mat4')([], mvMatrix)
+    cowboyUniforms.uNMatrix = glMat3.fromMat4([], mvMatrix)
 
     // We run a function that sets up and calls `gl.drawElements` in order to
     // draw our model onto the page
