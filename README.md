@@ -2,7 +2,7 @@
 
 ## To read the tutorial
 
-http://chinedufn.com/webgl-wield-item-tutorial/
+http://chinedufn.com/attaching-objects-to-bones/
 
 ## To run locally
 
