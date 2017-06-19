@@ -44,7 +44,7 @@ var cowboyJSON = require('./cowboy-model.json')
 var keyframesToDualQuats = require('keyframes-to-dual-quats')
 cowboyJSON.keyframes = keyframesToDualQuats(cowboyJSON.keyframes)
 
-var createItemVertexShader = function (opts) {
+function createItemVertexShader (opts) {
   return `
     attribute vec3 aVertexPosition;
 
@@ -66,7 +66,7 @@ var createItemVertexShader = function (opts) {
   `
 }
 
-var createItemFragmentShader = function () {
+function createItemFragmentShader () {
   return `
     precision mediump float;
     uniform vec4 uVertexColor;
@@ -102,7 +102,7 @@ texture.onload = function () {
     textureImage: texture
   })
 }
-texture.src = '/cowboy-texture.png'
+texture.src = 'cowboy-texture.png'
 
 // We use the number of seconds that have elapsed to know
 // how much to interpolate our model's joints
